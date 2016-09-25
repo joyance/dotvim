@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/LKI/dotvim.svg)](https://travis-ci.org/LKI/dotvim)
+[![Build Status](https://travis-ci.org/joyance/dotvim.svg)](https://travis-ci.org/joyance/dotvim)
 
 Pre-requires
 ------------
@@ -12,7 +12,7 @@ Linux/Unix Installation
 -----------------------
 Run the following command to make the dotvim effective:
 
-    git clone --recurse-submodules git://github.com/LKI/dotvim.git ~/.vim
+    git clone --recurse-submodules https://github.com/joyance/dotvim.git ~/.vim
 
 Then you create a symbol link to the .vim/vimrc file:
 
@@ -22,7 +22,7 @@ Windows Installation
 --------------------
 Run the following command to make the dotvim effective:
 
-    git clone --recurse-submodules git://github.com/LKI/dotvim.git ~/vimfiles
+    git clone --recurse-submodules https://github.com/joyance/dotvim.git ~/vimfiles
     copy ~/vimfiles/vimrc ~/_vimrc
 
 Useful Shortcuts
@@ -81,7 +81,7 @@ If you're a beginner, just clone and use it for weeks.
 
 Feel free to fork your own dotvim repository, make changes and send a pull request.
 
-Inspired by [schnell18/dotvim][dotvim_justin]
+Inspired by [LKI/dotvim][dotvim_lirian] and [schnell18/dotvim][dotvim_justin]
 
 
 [1]:https://www.python.org/downloads/
@@ -95,4 +95,5 @@ Inspired by [schnell18/dotvim][dotvim_justin]
 [tabular]:       https://github.com/godlygeek/tabular
 [expand_region]: https://github.com/terryma/vim-expand-region
 [emmet]:         https://github.com/mattn/emmet-vim
+[dotvim_lirian]: https://github.com/LKI/dotvim
 [dotvim_justin]: https://github.com/schnell18/dotvim

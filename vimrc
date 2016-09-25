@@ -26,23 +26,37 @@ elseif has("win32")
   endif
 endif
 
-"Set desert as default color scheme
-set background=light
-colorscheme desert
-call togglebg#map("<F5>")
+" Set desert as default color scheme
+" set background=light
+" colorscheme desert
+" call togglebg#map("<F5>")
 
 " Autocmd to markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
+" Autocmd to php
+if has("autocmd")
+  " Drupal *.module and *.install files.
+  augroup module
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd BufRead,BufNewFile *.inc set filetype=php
+    autocmd BufRead,BufNewFile *.profile set filetype=php
+    autocmd BufRead,BufNewFile *.view set filetype=php
+  augroup END
+endif
+
 " Some text settings
-set sw=4
-set ts=4
+set sw=2
+set ts=2
 set expandtab
 set hlsearch
 set incsearch
 set wildmenu
 set smartindent
 set cindent
+set nu
 
 " Match parentheses, 1matchtime = 1/10s
 set showmatch
@@ -90,13 +104,13 @@ vmap <Leader>T :Tab /=><CR>
 vmap v <Plug>(expand_region_expand)
 vmap V <Plug>(expand_region_shrink)
 
-" Dbext settings
-let g:dbext_default_SQLITE_bin = 'sqlite3'
-let g:dbext_default_profile_sqlite = 'type=SQLITE:dbname=~/sqlite.db'
-" #--dbext:profile=sqlite
-let g:dbext_default_MYSQL_bin = 'mysql'
-let g:dbext_default_profile_mysql= 'type=MYSQL:user=lirian:dbname=db'
-" #--dbext:profile=mysql
+" " Dbext settings
+" let g:dbext_default_SQLITE_bin = 'sqlite3'
+" let g:dbext_default_profile_sqlite = 'type=SQLITE:dbname=~/sqlite.db'
+" " #--dbext:profile=sqlite
+" let g:dbext_default_MYSQL_bin = 'mysql'
+" let g:dbext_default_profile_mysql= 'type=MYSQL:user=lirian:dbname=db'
+" " #--dbext:profile=mysql
 
 " csv.vim
 let b:csv_headerline=0
@@ -110,3 +124,7 @@ autocmd FileType html,css EmmetInstall
 
 " add trailing space to line up to 150 length
 " :%s/$/\=repeat(" ", 150-virtcol("$"))
+
+" hightlight trailing whitespace
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
